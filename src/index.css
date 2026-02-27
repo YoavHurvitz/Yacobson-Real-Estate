@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  --accent-r: 232;
+  --accent-g: 93;
+  --accent-b: 63;
+  --accent-hex: #E85D3F;
+  --accent-hover-hex: #d14d30;
+  --bg-warm: #FFF6EC;
+}
+
+@theme {
+  --font-sans: "Heebo", ui-sans-serif, system-ui, sans-serif;
+  --color-brand-dark: #121212;
+  --color-brand-light: #f8f9fa;
+  --color-brand-accent: #e5e7eb;
+  
+  --color-accent: var(--accent-hex);
+  --color-accent-hover: var(--accent-hover-hex);
+  --color-bg-warm: var(--bg-warm);
+}
+
+@layer utilities {
+  .bg-premium-gradient {
+    background-color: var(--bg-warm);
+    background-image: radial-gradient(
+      circle at 50% 50%, 
+      rgba(var(--accent-r), var(--accent-g), var(--accent-b), 0.70) 0%, 
+      rgba(var(--accent-r), var(--accent-g), var(--accent-b), 0.35) 35%, 
+      rgba(var(--accent-r), var(--accent-g), var(--accent-b), 0.12) 70%, 
+      rgba(var(--accent-r), var(--accent-g), var(--accent-b), 0) 90%
+    );
+  }
+}
+
+body {
+  font-family: "Heebo", sans-serif;
+  background-color: var(--color-brand-light);
+  color: var(--color-brand-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar for a premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Hide scrollbar for horizontal scrolling areas but keep functionality */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
