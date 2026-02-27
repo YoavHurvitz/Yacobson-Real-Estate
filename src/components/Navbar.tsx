@@ -50,19 +50,19 @@ export default function Navbar() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="absolute top-0 left-0 right-0 flex items-center justify-between py-6 px-6 md:px-12 lg:px-24 text-white z-50"
+        className="absolute top-0 left-0 right-0 flex items-center justify-between md:justify-center py-6 px-6 md:px-12 lg:px-24 text-white z-50"
       >
-        <div className="text-2xl font-bold tracking-tight z-50 relative">
+        <div className="text-2xl md:text-3xl font-bold tracking-tight z-50 relative md:absolute md:left-12 lg:left-24">
           Breeze
         </div>
 
-        <div className="hidden md:flex items-center gap-2 bg-black/20 backdrop-blur-md px-2 py-2 rounded-full border border-white/10">
+        <div className="hidden md:flex items-center gap-3 bg-black/20 backdrop-blur-md px-3 py-3 rounded-full border border-white/10">
           {links.map((link) => (
             <a 
               key={link.name}
               href={link.href} 
               onClick={(e) => scrollToSection(e, link.href)}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+              className={`px-6 py-2.5 rounded-full text-base font-medium transition-all duration-300 ${
                 activeSection === link.href.substring(1) 
                   ? 'bg-white/20 text-white shadow-sm' 
                   : 'text-white/80 hover:text-white hover:bg-white/10'

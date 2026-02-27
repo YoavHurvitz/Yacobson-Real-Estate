@@ -33,7 +33,12 @@ const GoogleIcon = () => (
 export default function Hero() {
   const { scrollY } = useScroll();
   const backgroundY = useTransform(scrollY, [0, 1000], ['0%', '20%']);
-  const opacity = useTransform(scrollY, [0, 500], [1, 0]);
+  
+  // Slower fade out on mobile, standard on desktop
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  const fadeStart = isMobile ? 300 : 100;
+  const fadeEnd = isMobile ? 800 : 500;
+  const opacity = useTransform(scrollY, [fadeStart, fadeEnd], [1, 0]);
 
   const scrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
@@ -53,7 +58,7 @@ export default function Hero() {
         <img 
           src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop" 
           alt="Luxury Property at Golden Hour" 
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-[center_0%]"
         />
         {/* Gradient overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/90"></div>
@@ -65,13 +70,13 @@ export default function Hero() {
       <div className="relative z-10 flex-grow flex flex-col justify-center px-6 md:px-12 lg:px-24 pt-32 pb-16">
         <motion.div
           style={{ opacity }}
-          className="max-w-4xl flex flex-col gap-6 md:gap-8 items-center md:items-start text-center md:text-right mx-auto md:mx-0"
+          className="max-w-4xl flex flex-col gap-6 md:gap-8 items-center text-center mx-auto"
         >
           <motion.h1 
             initial={{ opacity: 0, y: 30, textShadow: "0px 0px 0px rgba(var(--accent-r), var(--accent-g), var(--accent-b), 0)" }}
             animate={{ opacity: 1, y: 0, textShadow: "0px 0px 40px rgba(var(--accent-r), var(--accent-g), var(--accent-b), 0.3)" }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.15] md:leading-[1.1] tracking-tight drop-shadow-lg"
+            className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.15] md:leading-[1.1] tracking-tight drop-shadow-lg"
           >
             הנכס הבא שלכם <br className="hidden md:block" /> מתחיל <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-[#f4a261]">כאן</span>
           </motion.h1>
@@ -89,7 +94,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row items-center gap-6 mt-2"
+            className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-2 w-full"
           >
             <a 
               href="#contact"
@@ -125,12 +130,12 @@ export default function Hero() {
         </motion.div>
 
         {/* Animated KPIs */}
-        <div className="mt-auto pt-16 grid grid-cols-3 gap-2 md:gap-8 max-w-3xl mx-auto md:mx-0 text-center md:text-right">
+        <div className="mt-auto pt-16 grid grid-cols-3 gap-2 md:gap-8 max-w-3xl mx-auto text-center">
           <motion.div 
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col items-center md:items-start"
+            className="flex flex-col items-center"
           >
             <Users className="w-5 h-5 md:w-6 md:h-6 text-white/80 mb-2 md:mb-3" />
             <div className="text-2xl sm:text-3xl md:text-5xl font-bold text-white tracking-tight mb-1">
@@ -143,7 +148,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
-            className="flex flex-col items-center md:items-start"
+            className="flex flex-col items-center"
           >
             <Building2 className="w-5 h-5 md:w-6 md:h-6 text-white/80 mb-2 md:mb-3" />
             <div className="text-2xl sm:text-3xl md:text-5xl font-bold text-white tracking-tight mb-1">
@@ -156,7 +161,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.0 }}
-            className="flex flex-col items-center md:items-start"
+            className="flex flex-col items-center"
           >
             <Award className="w-5 h-5 md:w-6 md:h-6 text-white/80 mb-2 md:mb-3" />
             <div className="text-2xl sm:text-3xl md:text-5xl font-bold text-white tracking-tight mb-1">
