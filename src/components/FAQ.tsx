@@ -27,19 +27,18 @@ export default function FAQ() {
   return (
     <section className="py-24 px-6 md:px-12 lg:px-24 max-w-4xl mx-auto">
       <div className="text-center mb-16">
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-50px" }}
           className="text-4xl md:text-5xl font-bold mb-4"
         >
           שאלות ותשובות נפוצות
         </motion.h2>
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
+          viewport={{ once: true, margin: "-50px" }}
           className="text-gray-500"
         >
           ריכזנו עבורכם את השאלות הנפוצות ביותר. לא מצאתם תשובה? צרו קשר.
@@ -48,17 +47,17 @@ export default function FAQ() {
 
       <div className="space-y-4">
         {faqs.map((faq, index) => (
-          <motion.div 
+          <motion.div
             key={index}
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ delay: index * 0.1, duration: 0.4, ease: "easeOut" }}
             className="border-b border-gray-200 pb-4"
           >
-            <button 
+            <button
               onClick={() => setOpenIndex(openIndex === index ? null : index)}
-              className="w-full flex justify-between items-center py-4 text-right focus:outline-none"
+              className="w-full flex justify-between items-center py-4 text-right focus:outline-none focus:ring-2 focus:ring-accent/50 rounded-lg cursor-pointer"
             >
               <span className="text-xl font-bold pr-4">{faq.question}</span>
               <span className="text-gray-400 flex-shrink-0">
@@ -67,7 +66,7 @@ export default function FAQ() {
             </button>
             <AnimatePresence>
               {openIndex === index && (
-                <motion.div 
+                <motion.div
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: 'auto', opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}

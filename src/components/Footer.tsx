@@ -4,36 +4,40 @@ import { MapPin, Phone, Mail } from 'lucide-react';
 export default function Footer() {
   return (
     <footer className="w-full">
-      <div className="relative overflow-hidden bg-gray-900 pt-24 pb-12 px-8 md:px-16 lg:px-24">
+      <div className="relative bg-gray-900 pt-24 pb-12 px-8 md:px-16 lg:px-24">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" 
-            alt="Luxury Home Night" 
+          <img
+            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop"
+            alt="Luxury Home Night"
             className="w-full h-full object-cover opacity-30"
+            loading="lazy"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
         </div>
 
         <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-end gap-12 mb-24 max-w-7xl mx-auto">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
             className="max-w-2xl"
           >
             <h2 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
-              בואו נבנה את <br /> בית החלומות שלכם
+              מצוינות בתיווך <br /> נכסי יוקרה
             </h2>
             <p className="text-white/70 text-lg max-w-md">
-              אנחנו כאן כדי לעזור לכם בכל שאלה או רעיון פרויקט. בין אם יש לכם שאלה על השירותים שלנו או שאתם מוכנים להתחיל.
+              חווית שירות בוטיק מותאמת אישית לצרכים שלכם. אנו מתמחים בנכסי פרימיום ושירות ללא פשרות בלב תל אביב.
             </p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
             className="text-right flex flex-col gap-4"
           >
             <div className="flex items-center justify-end gap-3 text-white/80 hover:text-white transition-colors">
@@ -56,12 +60,12 @@ export default function Footer() {
           <div className="text-2xl font-bold text-white tracking-tight">
             Breeze
           </div>
-          
+
           <div className="flex gap-6 text-sm text-white/60">
-            <a href="#" className="hover:text-white transition-colors">תנאי שימוש</a>
-            <a href="#" className="hover:text-white transition-colors">פרטיות</a>
-            <a href="#" className="hover:text-white transition-colors">עוגיות</a>
-            <a href="#" className="hover:text-white transition-colors">נגישות</a>
+            <a href="#" className="hover:text-white transition-colors cursor-pointer">תנאי שימוש</a>
+            <a href="#" className="hover:text-white transition-colors cursor-pointer">פרטיות</a>
+            <a href="#" className="hover:text-white transition-colors cursor-pointer">עוגיות</a>
+            <a href="#" className="hover:text-white transition-colors cursor-pointer">נגישות</a>
           </div>
 
           <div className="text-sm text-white/40">

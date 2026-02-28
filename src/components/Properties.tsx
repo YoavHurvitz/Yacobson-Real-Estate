@@ -41,7 +41,7 @@ export default function Properties() {
   const [activeFilter, setActiveFilter] = useState("הכל");
   const scrollRef = useRef<HTMLDivElement>(null);
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
+  const inView = useInView(ref, { once: true, margin: "-50px" });
 
   const filtered = activeFilter === "הכל" ? allProperties : allProperties.filter((p) => p.type === activeFilter);
 
@@ -56,24 +56,28 @@ export default function Properties() {
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.7 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
         className="max-w-7xl mx-auto"
       >
         <span className="text-accent font-bold tracking-wider uppercase text-sm mb-2 block">הנכסים שלנו</span>
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-            נכסים <span className="text-accent">נבחרים</span>
-          </h2>
+        <div className="flex flex-col mb-10 md:mb-12">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+              נכסי פרימיום <span className="text-accent">בבלעדיות</span>
+            </h2>
+          </div>
+          <p className="text-gray-600 max-w-2xl text-lg mb-6">
+            קולקציית הנכסים הייחודית שלנו שלא תמצאו בלוחות הרגילים. חלק מהנכסים שלנו נמצאים בשיווק שקט (Off-Market) מטעמי דיסקרטיות.
+          </p>
           <div className="flex items-center gap-2 overflow-x-auto pb-2 hide-scrollbar">
             {filters.map((f) => (
               <button
                 key={f}
                 onClick={() => setActiveFilter(f)}
-                className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all whitespace-nowrap ${
-                  activeFilter === f
-                    ? "bg-accent text-white shadow-md shadow-accent/20"
-                    : "bg-white/80 text-gray-500 hover:text-gray-900 border border-gray-200 hover:border-gray-300"
-                }`}
+                className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all whitespace-nowrap cursor-pointer ${activeFilter === f
+                  ? "bg-accent text-white shadow-md shadow-accent/20"
+                  : "bg-white/80 text-gray-500 hover:text-gray-900 border border-gray-200 hover:border-gray-300"
+                  }`}
               >
                 {f}
               </button>
@@ -89,7 +93,7 @@ export default function Properties() {
               key={property.id}
               initial={{ opacity: 0, y: 40 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: i * 0.15 }}
+              transition={{ duration: 0.4, delay: i * 0.1, ease: "easeOut" }}
               className="min-w-[340px] md:min-w-[380px] group"
             >
               <div className="rounded-[2rem] overflow-hidden bg-white/90 backdrop-blur-sm border border-white hover:border-accent/30 transition-all duration-500 hover:shadow-xl hover:shadow-accent/10">
@@ -99,6 +103,7 @@ export default function Properties() {
                     alt={property.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute top-4 right-4">
                     <span className="px-4 py-1.5 rounded-full bg-accent text-white text-xs font-bold shadow-sm">
@@ -119,7 +124,7 @@ export default function Properties() {
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-2xl font-bold text-accent">{property.price}</span>
-                    <button className="px-5 py-2.5 rounded-full bg-gray-50 text-gray-900 text-sm font-bold hover:bg-accent hover:text-white transition-colors">
+                    <button className="px-5 py-2.5 rounded-full bg-gray-50 text-gray-900 text-sm font-bold hover:bg-accent hover:text-white transition-colors cursor-pointer">
                       פרטים נוספים
                     </button>
                   </div>
@@ -130,10 +135,10 @@ export default function Properties() {
         </div>
 
         {/* Arrows */}
-        <button onClick={() => scroll("right")} className="absolute top-1/2 -translate-y-1/2 -right-4 md:-right-6 w-12 h-12 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center hover:bg-accent hover:text-white hover:border-accent transition-colors z-10 text-gray-600">
+        <button onClick={() => scroll("right")} aria-label="גלול ימינה" className="absolute top-1/2 -translate-y-1/2 -right-4 md:-right-6 w-12 h-12 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center hover:bg-accent hover:text-white hover:border-accent transition-colors z-10 text-gray-600 cursor-pointer">
           <ChevronRight size={24} />
         </button>
-        <button onClick={() => scroll("left")} className="absolute top-1/2 -translate-y-1/2 -left-4 md:-left-6 w-12 h-12 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center hover:bg-accent hover:text-white hover:border-accent transition-colors z-10 text-gray-600">
+        <button onClick={() => scroll("left")} aria-label="גלול שמאלה" className="absolute top-1/2 -translate-y-1/2 -left-4 md:-left-6 w-12 h-12 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center hover:bg-accent hover:text-white hover:border-accent transition-colors z-10 text-gray-600 cursor-pointer">
           <ChevronLeft size={24} />
         </button>
       </div>

@@ -1,29 +1,67 @@
+import React, { lazy, Suspense, useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import Hero from './components/Hero';
-import Properties from './components/Properties';
-import AboutUs from './components/AboutUs';
-import WhyUs from './components/WhyUs';
-import CTAForm from './components/CTAForm';
-import Reviews from './components/Reviews';
-import Team from './components/Team';
-import FAQ from './components/FAQ';
-import Footer from './components/Footer';
+
+// Code-split below-the-fold components for faster initial load
+const Properties = lazy(() => import('./components/Properties'));
+const AboutUs = lazy(() => import('./components/AboutUs'));
+const CTAForm = lazy(() => import('./components/CTAForm'));
+const WhyUs = lazy(() => import('./components/WhyUs'));
+const Reviews = lazy(() => import('./components/Reviews'));
+const Team = lazy(() => import('./components/Team'));
+const FAQ = lazy(() => import('./components/FAQ'));
+const Footer = lazy(() => import('./components/Footer'));
 
 export default function App() {
+  const [showWhatsApp, setShowWhatsApp] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 600) {
+        setShowWhatsApp(true);
+      } else {
+        setShowWhatsApp(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <main className="min-h-screen bg-[#f8f9fa] overflow-hidden">
+    <main className="min-h-screen bg-[#f8f9fa]">
       <Hero />
-      <Properties />
-      <AboutUs />
-      <CTAForm id="contact" />
-      <WhyUs />
-      <Reviews />
-      <Team />
-      <CTAForm />
-      <FAQ />
-      <Footer />
+      <Suspense fallback={null}>
+        <Properties />
+        <AboutUs />
+        <CTAForm id="contact" />
+        <WhyUs />
+        <Reviews />
+        <Team />
+        <CTAForm />
+        <FAQ />
+        <Footer />
+      </Suspense>
+
+      {/* Floating WhatsApp Button */}
+      <AnimatePresence>
+        {showWhatsApp && (
+          <motion.a
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.4 }}
+            href="https://wa.me/972500000000?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%A0%D7%9B%D7%A1%D7%99%D7%9D"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[100] bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:bg-[#20bd5a] transition-colors duration-300 cursor-pointer flex items-center justify-center"
+            aria-label="שלח הודעת וואטסאפ"
+          >
+            <svg viewBox="0 0 24 24" width="32" height="32" className="w-8 h-8 md:w-10 md:h-10" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.489-1.761-1.662-2.062-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+            </svg>
+          </motion.a>
+        )}
+      </AnimatePresence>
     </main>
   );
 }
-
-
-
