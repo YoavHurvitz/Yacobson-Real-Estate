@@ -9,9 +9,9 @@ const CTAForm = lazy(() => import('./components/CTAForm'));
 const WhyUs = lazy(() => import('./components/WhyUs'));
 const Reviews = lazy(() => import('./components/Reviews'));
 const Team = lazy(() => import('./components/Team'));
+const Blog = lazy(() => import('./components/Blog'));
 const FAQ = lazy(() => import('./components/FAQ'));
 const Footer = lazy(() => import('./components/Footer'));
-
 export default function App() {
   const [showWhatsApp, setShowWhatsApp] = useState(false);
 
@@ -37,6 +37,7 @@ export default function App() {
         <WhyUs />
         <Reviews />
         <Team />
+        <Blog />
         <CTAForm />
         <FAQ />
         <Footer />
