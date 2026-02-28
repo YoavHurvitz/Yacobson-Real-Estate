@@ -102,6 +102,7 @@ export default function Properties() {
                     src={property.image}
                     alt={property.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
                     decoding="async"
                   />
                   <div className="absolute top-4 right-4">
