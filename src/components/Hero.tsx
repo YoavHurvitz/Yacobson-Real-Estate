@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, animate, useInView } from 'motion/react';
 import { ArrowLeft, Star, Users, Building2, Award } from 'lucide-react';
 import Navbar from './Navbar';
