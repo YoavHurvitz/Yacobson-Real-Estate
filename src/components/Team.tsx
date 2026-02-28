@@ -3,8 +3,8 @@ import { motion } from 'motion/react';
 const team = [
   {
     id: 1,
-    name: "יונתן ברק",
-    role: "מייסד ומנכ״ל",
+    name: "שאולי יעקובסון",
+    role: "בעלים ומייסד",
     image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop"
   },
   {

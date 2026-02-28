@@ -96,7 +96,7 @@ export default function Navbar() {
 
         <div className="flex-1 flex items-center justify-end gap-4 shrink-0">
           <div className={`text-2xl md:text-3xl font-bold tracking-tight z-50 ${isScrolled ? 'text-gray-900' : 'text-white'}`}>
-            Breeze
+            יעקובסון נכסים
           </div>
         </div>
       </motion.nav>
@@ -119,7 +119,7 @@ export default function Navbar() {
             >
               <div className="flex justify-between items-center mb-8">
                 <div className="text-2xl font-bold text-gray-900 tracking-tight">
-                  Breeze
+                  יעקובסון נכסים
                 </div>
                 <button
                   onClick={() => setIsMobileMenuOpen(false)}

@@ -29,7 +29,7 @@ export default function AboutUs() {
           className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-6 py-2 rounded-full text-accent font-bold tracking-wider mb-8 shadow-2xl"
         >
           <Award className="w-5 h-5" />
-          <span>15+ שנות ניסיון</span>
+          <span>16+ שנות ניסיון</span>
         </motion.div>
 
         {/* Title with Glow Animation and Colorful Gradient */}
@@ -40,9 +40,9 @@ export default function AboutUs() {
           transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
           className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-8"
         >
-          משרד התיווך המוביל <br />
+          המשרד המוביל במרכז <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-[#f4a261]">
-            לנכסי יוקרה
+            לקנייה והשכרה
           </span>
         </motion.h2>
 
@@ -53,9 +53,9 @@ export default function AboutUs() {
           transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
           className="text-gray-300 text-lg md:text-xl leading-relaxed max-w-3xl mb-12 drop-shadow-md font-light"
         >
-          אנו מתמחים באיתור, שיווק ומכירה של נכסי פרימיום במיקומים המבוקשים ביותר.
-          הצוות שלנו מורכב מסוכני נדל״ן מוסמכים ומנוסים, המעניקים שירות אישי, דיסקרטי ומקצועי ללא פשרות.
-          המטרה שלנו היא להפוך את תהליך הקנייה או המכירה לחוויה חלקה, בטוחה ומוצלחת.
+          יעקובסון נכסים הוקמה בשנת 2008 על ידי שאולי יעקובסון.
+          אנו מעניקים שירותי תיווך ושיווק נכסים באזור המרכז, בהתמחות מיוחדת בתל-אביב, גבעתיים ורמת-גן.
+          שירות אישי ומקיף עם רשת קשרים של עו״ד, שמאים, אדריכלים ויועצי משכנתאות לשירות מושלם תחת קורת גג אחת, וגישה למערכות מידע בלעדיות לקונים ולמוכרים.
         </motion.p>
 
         <motion.div

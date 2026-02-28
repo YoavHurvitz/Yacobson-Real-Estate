@@ -78,7 +78,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
             className="text-lg md:text-xl text-gray-200 max-w-2xl font-normal drop-shadow-md leading-relaxed md:leading-relaxed"
           >
-            אנו מתמחים בנכסי יוקרה בלעדיים שלא תמצאו בלוחות הרגילים. מעל עשור של אמינות, דיסקרטיות, ומאות עסקאות מוצלחות בלב אזורי הביקוש.
+            שיווק נכסים פרטיים להשכרה ומכירה באזור תל-אביב, רמת גן וגבעתיים. ליווי אישי, מקצועיות ללא פשרות, ומעטפת מלאה עד למפתח.
           </motion.p>
 
           <motion.div
@@ -88,7 +88,7 @@ export default function Hero() {
             className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-2 w-full"
           >
             <a
-              href="https://wa.me/972500000000?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%A0%D7%9B%D7%A1%D7%99%D7%9D"
+              href="https://wa.me/972523402559?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%A0%D7%9B%D7%A1%D7%99%D7%9D"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-accent text-white px-8 py-4 rounded-full font-bold text-lg flex items-center justify-center gap-3 hover:bg-accent-hover transition-all active:scale-95 shadow-xl shadow-accent/30 group w-full sm:w-auto cursor-pointer"
@@ -160,7 +160,7 @@ export default function Hero() {
           >
             <Award className="w-5 h-5 md:w-6 md:h-6 text-white/80 mb-2 md:mb-3" />
             <div className="text-2xl sm:text-3xl md:text-5xl font-bold text-white tracking-tight mb-1">
-              <CountUp end={15} suffix="+" />
+              <CountUp end={16} suffix="+" />
             </div>
             <div className="text-xs sm:text-sm md:text-base text-white/70 font-medium">שנות ניסיון</div>
           </motion.div>

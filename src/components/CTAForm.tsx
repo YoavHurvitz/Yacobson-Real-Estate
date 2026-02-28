@@ -31,7 +31,7 @@ export default function CTAForm({ id }: CTAFormProps) {
           transition={{ duration: 0.4, ease: "easeOut" }}
           className="text-center mb-10"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 tracking-tight">איך נוכל לעזור לכם היום?</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 tracking-tight">איך יעקובסון נכסים תוכל לעזור לכם?</h2>
         </motion.div>
 
         <motion.div
