@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 
 // Code-split below-the-fold components for faster initial load
 const Properties = lazy(() => import('./components/Properties'));
+const Services = lazy(() => import('./components/Services'));
 const AboutUs = lazy(() => import('./components/AboutUs'));
 const CTAForm = lazy(() => import('./components/CTAForm'));
 const WhyUs = lazy(() => import('./components/WhyUs'));
@@ -32,11 +33,12 @@ export default function App() {
       <Hero />
       <Suspense fallback={null}>
         <Properties />
-        <AboutUs />
-        <CTAForm id="contact" />
+        <Services />
         <WhyUs />
         <Reviews />
         <Team />
+        <CTAForm id="contact" />
+        <AboutUs />
         <Blog />
         <CTAForm />
         <FAQ />
