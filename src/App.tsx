@@ -35,10 +35,10 @@ export default function App() {
         <Properties />
         <Services />
         <WhyUs />
+        <AboutUs />
         <Reviews />
         <Team />
         <CTAForm id="contact" />
-        <AboutUs />
         <Blog />
         <CTAForm />
         <FAQ />
