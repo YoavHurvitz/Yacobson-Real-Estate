@@ -40,8 +40,8 @@ export default function App() {
         <Reviews />
         <Team />
         <Blog />
-        <FAQ />
         <CTAForm />
+        <FAQ />
         <Footer />
       </Suspense>
 

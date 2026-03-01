@@ -87,36 +87,6 @@ export default function WhyUs() {
             </motion.div>
           ))}
         </div>
-
-        {/* Free Guide / Educational Resource CTA */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 30 }}
-          animate={inView ? { opacity: 1, scale: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-          className="max-w-5xl mx-auto mt-16 md:mt-24 rounded-3xl relative overflow-hidden bg-gray-900 shadow-[0_20px_60px_rgba(0,0,0,0.4)]"
-        >
-          <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 z-0"></div>
-          <div className="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#f4a261]/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
-
-          <div className="relative z-10 bg-white/5 backdrop-blur-xl border border-white/10 p-8 md:p-12 text-center md:text-right flex flex-col md:flex-row items-center justify-between gap-8 h-full w-full">
-            <div>
-              <span className="text-gray-400 font-bold tracking-widest text-sm mb-3 block uppercase">מדריך חינמי • בלעדי</span>
-              <h3 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight">מתכננים מכירה השנה?</h3>
-              <p className="text-gray-300 text-lg max-w-2xl leading-relaxed font-light">
-                קבלו במתנה את <b className="text-white font-medium">"המדריך המושלם למוכר 2024"</b> - כולל 6 סודות לעיצוב פנים שמעלים את ערך הנכס בעד 15% ללא שיפוץ מסיבי. מידע ששווה אלפי שקלים, בחינם.
-              </p>
-            </div>
-            <a
-              href="https://wa.me/972523402559?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%90%D7%AA%20%D7%94%D7%9E%D7%93%D7%A8%D7%99%D7%9A%20%D7%94%D7%97%D7%99%D7%A0%D7%9E%D7%99%20%D7%9C%D7%9E%D7%95%D7%9B%D7%A8"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full md:w-auto bg-white text-gray-900 px-8 py-4 rounded-full font-bold text-lg text-center hover:bg-gray-100 hover:shadow-[0_0_25px_rgba(255,255,255,0.2)] transition-all duration-300 cursor-pointer shrink-0"
-            >
-              שלחו לי וואטסאפ
-            </a>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
