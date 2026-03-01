@@ -4,9 +4,15 @@ import { Send, Home, Key, UserCircle } from 'lucide-react';
 
 interface CTAFormProps {
   id?: string;
+  title?: string;
+  subtitle?: string;
 }
 
-export default function CTAForm({ id }: CTAFormProps) {
+export default function CTAForm({
+  id,
+  title = "מוכנים לעשות את הצעד הבא?",
+  subtitle = "השאירו פרטים ונלווה אתכם בדרך לעסקה המשתלמת ביותר"
+}: CTAFormProps) {
   const [activeTab, setActiveTab] = useState<string | null>('buy');
 
   const options = [
@@ -40,8 +46,8 @@ export default function CTAForm({ id }: CTAFormProps) {
           transition={{ duration: 0.4, ease: "easeOut" }}
           className="text-center mb-8 md:mb-10"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight drop-shadow-sm">מוכנים לעשות את הצעד הבא?</h2>
-          <p className="mt-3 text-white/80 font-medium md:text-lg">השאירו פרטים ונלווה אתכם בדרך לעסקה המשתלמת ביותר</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight drop-shadow-sm">{title}</h2>
+          <p className="mt-3 text-white/80 font-medium md:text-lg">{subtitle}</p>
         </motion.div>
 
         <motion.div

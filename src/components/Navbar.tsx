@@ -5,7 +5,7 @@ import { Menu, X } from 'lucide-react';
 const links = [
   { name: 'בית', href: '#home' },
   { name: 'נכסים', href: '#properties' },
-  { name: 'יתרונות', href: '#why-us' },
+  { name: 'שירותים', href: '#services' },
   { name: 'הצוות', href: '#team' },
   { name: 'צור קשר', href: '#contact' },
 ];

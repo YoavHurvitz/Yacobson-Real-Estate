@@ -35,12 +35,12 @@ export default function App() {
         <Properties />
         <Services />
         <WhyUs />
-        <CTAForm id="contact" />
+        <CTAForm />
         <AboutUs />
         <Reviews />
         <Team />
         <Blog />
-        <CTAForm />
+        <CTAForm title="הגיע הזמן להתקדם לנכס הבא שלכם." subtitle="צוות המומחים שלנו כאן לשירותכם בכל שאלה או לתיאום פגישה אישית." />
         <FAQ />
         <Footer />
       </Suspense>

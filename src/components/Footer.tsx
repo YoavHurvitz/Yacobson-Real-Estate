@@ -3,7 +3,7 @@ import { MapPin, Phone, Mail } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="w-full">
+    <footer id="contact" className="w-full">
       <div className="relative bg-gray-900 pt-24 pb-12 px-8 md:px-16 lg:px-24">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
